@@ -1,0 +1,22 @@
+{
+  "name": "personal_portfolio",
+  "version": "1.0.0",
+  "description": "personal website portfolio",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -o css/tailwindoutput.css --watch --jit --purge ./public/**/*.html"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "portfolio",
+    "project"
+  ],
+  "author": "Chris Kamer",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^3.0.2"
+  }
+}

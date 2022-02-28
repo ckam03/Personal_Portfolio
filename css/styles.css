@@ -1,0 +1,52 @@
+input:checked~#colorswitcher {
+    transform: translateX(24px);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    #menu {
+      top: 88px;
+      max-height: 0;
+      opacity: 0.5;
+      overflow: hidden;
+      transition: max-height 500ms ease-in-out, opacity 300ms ease-in-out;
+    }
+
+    #menu-toggle:checked+#menu {
+
+      max-height: 250px;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 500ms ease-in-out, opacity 300ms ease-in-out;
+
+    }
+  }
+
+  #scroll-container {
+ 
+    scrollbar-color: #4b5563 #374151;
+  }
+
+  .animate span:nth-child(1) {
+    transform-origin: left;
+    transform: rotate(45deg);
+  }
+
+  .animate span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  .animate span:nth-child(3) {
+    transform-origin: left;
+    transform: rotate(-45deg);
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  #skills {
+    background-color: #14b8a6;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%2327272a' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    z-index: 100;
+  }

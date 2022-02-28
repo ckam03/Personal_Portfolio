@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html id="global" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/tailwindoutput.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron&family=Rubik&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+  <title>Document</title>
+
+  <script>
+    if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('#global').classList.add('dark')
+
+    } else if (localStorage.theme === 'dark') {
+      document.querySelector('#global').classList.add('dark')
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-800 duration-300 ease-in-out">
+  <header class="flex items-center justify-between pt-2 lg:max-w-6xl m-auto">
+    <div id="logo" class="relative pl-2">
+      <div
+        class="absolute -inset-0.5 bg-teal-500 rounded-lg blur-md opacity-50 bg-gradient-to-r from-teal-500 to-teal-300">
+      </div>
+      <a href=""
+        class="relative font-orbitron font-black border-white text-teal-500 text-4xl bg-gray-100 border-2 shadow-lg rounded-xl px-3 dark:bg-gray-700 dark:border-gray-500 duration-300 ease-in-out">C</a>
+    </div>
+    <label for="menu-toggle" class="lg:hidden flex items-center pr-2">
+      <div id="menuButton" class="space-y-2 w-full h-full relative cursor-pointer flex flex-col items-end p-2">
+        <span id="first" class=" w-7 h-0.5 bg-black dark:bg-gray-300 ease-in-out duration-300"></span>
+        <span id="second" class=" w-7 h-0.5 bg-black dark:bg-gray-300 ease-in-out duration-300"></span>
+        <span id="last" class=" w-7 h-0.5 bg-black dark:bg-gray-300 ease-in-out duration-300"></span>
+      </div>
+    </label>
+    <input type="checkbox" class="hidden" id="menu-toggle" />
+    <nav
+      class="w-full shadow-md absolute lg:relative lg:flex lg:items-center lg:w-auto lg:shadow-none z-50 bg-gray-100  duration-300 ease-in-out"
+      id="menu">
+      <ul id="menuul"
+        class="font-Inter font-semibold list-none text-center w-full space-y-10 lg:space-y-0 py-6 lg:flex items-center justify-center lg:space-x-16 text-sm text-gray-600 dark:bg-gray-800 bg-gray-100 duration-300 ease-in-out">
+        <li id="projectnav">
+          <a href="#portfolio"
+            class="hover:text-teal-500 duration-300 ease-in-out dark:hover:text-teal-400 dark:text-gray-400">Projects</a>
+        </li>
+        <li id="aboutnav">
+          <a href="#about"
+            class="hover:text-teal-500 duration-300 ease-in-out dark:hover:text-teal-400 dark:text-gray-400">About
+            Me</a>
+        </li>
+        <li id="contactnav">
+          <a href="#contact"
+            class="hover:text-teal-500 duration-300 ease-in-out dark:hover:text-teal-400 dark:text-gray-400">Contact</a>
+        </li>
+        <div id="toggle" class="flex items-center justify-center">
+          <label
+            class="cursor-pointer rounded-xl bg-gray-100 border-white border-2 dark:border-none dark:bg-gray-400 h-6 w-12 flex items-center px-0.5 relative shadow-xl"
+            for="switch">
+
+            <input class="hidden" type="checkbox" id="switch">
+            <div id="colorswitcher"
+              class="rounded-full bg-gray-400 dark:bg-gray-600 w-5 h-5 ease-in-out duration-300 z-50 relative">
+
+            </div>
+            <svg class="h-5 w-5 fill-current text-amber-500 absolute left-6" xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd" />
+            </svg>
+            <svg class="h-5 w-5 fill-current text-white absolute" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+              viewBox="0 0 20 20" fill="currentColor">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </label>
+        </div>
+      </ul>
+    </nav>
+  </header>
+  <div id="homecontainer"
+    class="lg:flex lg:flex-col lg:items-center lg:justify-around md:items-center md:justify-center lg:px-56">
+    <div class="py-24 lg:pt-44 text-center">
+      <div class="duration-300 ease-in-out">
+
+        <h1 class="font-Rubik text-2xl lg:text-3xl dark:text-gray-100">Hi, my name is</h1>
+      </div>
+      <h2 class="font-Rubik text-5xl lg:text-7xl text-teal-500 py-4">Chris Kamer</h2>
+      <div class="duration-300 ease-in-out">
+
+        <p id="pheading" class="font-Inter text-gray-600 text-lg pb-4 dark:text-gray-400">I'm a
+          Full Stack Developer living
+          in Glendale, Arizona</p>
+      </div>
+      <ul id="icons" class="flex justify-center space-x-2">
+
+        <li
+          class="border-2 border-gray-50 hover:border-gray-200 bg-gray-100 hover:border-2 rounded-full shadow-xl p-2 text-gray-600 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-teal-500 duration-300 ease-in-out hover:shadow-none">
+          <a class="" href="https://codepen.io/ckam03" target="_blank">
+            <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path
+                d="M 16 2.84375 L 15.4375 3.21875 L 3.4375 11.25 L 3 11.53125 L 3 20.46875 L 3.4375 20.75 L 15.4375 28.78125 L 16 29.15625 L 16.5625 28.78125 L 28.5625 20.75 L 29 20.46875 L 29 11.53125 L 28.5625 11.25 L 16.5625 3.21875 Z M 15 5.90625 L 15 11.34375 L 9.84375 14.8125 L 5.8125 12.09375 Z M 17 5.90625 L 26.1875 12.09375 L 22.15625 14.8125 L 17 11.34375 Z M 16 13.09375 L 20.34375 16 L 16 18.90625 L 11.65625 16 Z M 5 13.9375 L 8.0625 16 L 5 18.0625 Z M 27 13.9375 L 27 18.0625 L 23.9375 16 Z M 9.875 17.1875 L 15 20.65625 L 15 26.09375 L 5.8125 19.90625 Z M 22.125 17.1875 L 26.1875 19.90625 L 17 26.09375 L 17 20.65625 Z" />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="border-2 border-white bg-gray-100 rounded-full shadow-xl p-2 text-gray-600 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-300 dark:hover:text-gray-100 hover:text-teal-500 duration-300 ease-in-out hover:shadow-none">
+          <a href="https://github.com/ckam03" target="_blank">
+            <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path fill-rule="evenodd"
+                d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="border-2 border-white bg-gray-100 rounded-full shadow-xl p-2 text-gray-600 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-300 dark:hover:text-gray-100 hover:text-teal-500 duration-300 ease-in-out hover:shadow-none">
+          <a href="mailto:cwkamer@gmail.com" target="_blank">
+            <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path
+                d="M 3 8 L 3 26 L 29 26 L 29 8 Z M 7.3125 10 L 24.6875 10 L 16 15.78125 Z M 5 10.875 L 15.4375 17.84375 L 16 18.1875 L 16.5625 17.84375 L 27 10.875 L 27 24 L 5 24 Z" />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="border-2 border-white bg-gray-100 rounded-full shadow-xl p-2 text-gray-600 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-300 dark:hover:text-gray-100 hover:text-teal-500 duration-300 ease-in-out hover:shadow-none">
+          <a href="https://www.linkedin.com/in/chriskamer/" target="_blank">
+            <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path
+                d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="terminal" class="shadow-lg h-108 lg:w-screen lg:max-w-6xl font-Rubik rounded-lg">
+      <div
+        class="h-9 w-full bg-gray-100 dark:bg-gray-600 dark:bg-opacity-50 flex items-center justify-end rounded-t-md duration-300 ease-in-out">
+        <div id="button"
+          class="h-full w-12 rounded-md relative flex items-center justify-center hover:bg-gray-400 dark:hover:bg-coolGray-600">
+          <span class="bg-gray-800 dark:bg-coolGray-300 h-0.5 w-3 z-10"></span>
+        </div>
+        <div id="button"
+          class="h-full w-12 rounded-md relative flex items-center justify-center hover:bg-gray-400 dark:hover:bg-coolGray-600">
+          <div class="border-gray-800 dark:border-coolGray-300 border h-3 w-3"></div>
+        </div>
+        <div id="button"
+          class="h-full w-12 rounded-md relative flex items-center justify-center hover:bg-gray-400 dark:hover:bg-coolGray-600">
+          <svg class="h-5 w-5 fill-current text-gray-800 dark:text-coolGray-300" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+      </div>
+      <div id="editor"
+        class="bg-white dark:bg-gray-600 dark:bg-opacity-20 w-full h-100 rounded-b-md duration-300 ease-in-out">
+        <div class="flex flex-col items-left p-4 dark:text-coolGray-300">
+          <span class="text-teal-500 font-Inter text-lg">Chris@DESKTOP ~</span>
+          <div class="flex items-center">
+
+            <div class="text-lg text-teal-500 pr-2">></div>
+            <p class="pr-2 text-lg text-gray-600 dark:text-gray-300">Scroll down to view my work</p>
+            <div class="text-lg animate-blink">|</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="aboutsection" class="mt-64">
+      <div class="flex flex-col lg:w-screen text-center py-10 dark:bg-[#313135] bg-gray-700">
+        <div class="rounded-lg lg:w-screen lg:max-w-6xl m-auto py-10">
+          <h6 class="font-Rubik text-4xl text-gray-50">ABOUT ME</h6>
+
+          <p class="m-auto py-4 px-8 text-center font-Inter text-lg text-gray-300 dark:text-gray-400">Hi, I'm
+            Chris. I'm a full stack developer living in Glendale, Arizona.
+            I'm passionate about building web applications, solving problems creatively, and learning new technologies.
+            I'm
+            always improving my skills one project
+            at a time.
+            In my spare time I like to write music, workout, and cook.</p>
+        </div>
+        <svg style="z-index: 10;" class="text-teal-500 opacity-30 fill-current h-64 absolute right-0">
+          <circle cx="190" cy="100" r="100" />
+        </svg>
+        <h10 class="mt-20 text-2xl text-gray-100 font-Inter">Some technologies I've been working with recently:</h10>
+        <div class="lg:flex lg:justify-center lg:items-center lg:space-x-48 flex-wrap mt-20">
+          <div class="flex flex-col items-center">
+            <svg class="h-16 w-16 text-teal-400 fill-current mb-6" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32">
+              <path
+                d="M 4 5 L 4 27 L 28 27 L 28 5 Z M 6 7 L 26 7 L 26 9 L 6 9 Z M 6 11 L 26 11 L 26 25 L 6 25 Z M 11.21875 13.78125 L 9.78125 15.21875 L 12.5625 18 L 9.78125 20.78125 L 11.21875 22.21875 L 14.71875 18.71875 L 15.40625 18 L 14.71875 17.28125 Z M 16 20 L 16 22 L 22 22 L 22 20 Z" />
+            </svg>
+            <h8 class="font-Rubik font-bold text-2xl py-2 text-gray-100">Front End</h8>
+            <ul class="py-3 font-Inter text-gray-300 z-50 space-y-1">
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>HTML5/CSS3</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>TypeScript</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>JavaScript</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>TailwindCSS</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>React</li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <svg class="h-16 w-16 mb-6 text-teal-400 fill-current" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32">
+              <path
+                d="M 3 6 L 3 26 L 29 26 L 29 6 Z M 5 8 L 27 8 L 27 12 L 5 12 Z M 7 9 L 7 11 L 15 11 L 15 9 Z M 24 9 C 23.449219 9 23 9.449219 23 10 C 23 10.550781 23.449219 11 24 11 C 24.550781 11 25 10.550781 25 10 C 25 9.449219 24.550781 9 24 9 Z M 5 14 L 27 14 L 27 18 L 5 18 Z M 7 15 L 7 17 L 15 17 L 15 15 Z M 24 15 C 23.449219 15 23 15.449219 23 16 C 23 16.550781 23.449219 17 24 17 C 24.550781 17 25 16.550781 25 16 C 25 15.449219 24.550781 15 24 15 Z M 5 20 L 27 20 L 27 24 L 5 24 Z M 7 21 L 7 23 L 15 23 L 15 21 Z M 24 21 C 23.449219 21 23 21.449219 23 22 C 23 22.550781 23.449219 23 24 23 C 24.550781 23 25 22.550781 25 22 C 25 21.449219 24.550781 21 24 21 Z" />
+            </svg>
+            <h9 class="font-Rubik font-bold text-2xl py-2 text-gray-100">Back End</h9>
+            <ul class="py-3 font-Inter text-gray-300 space-y-1">
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>Node.js</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>PostgreSQL</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>ASP.NET Core</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>C#</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>TypeScript</li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <svg class="h-16 w-16 mb-6 text-teal-400 fill-current" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32">
+              <path
+                d="M 5.25 2.75 L 4.6875 3.28125 L 3.28125 4.6875 L 2.75 5.25 L 3.15625 5.90625 L 5.25 9.40625 L 5.53125 9.90625 L 8.46875 9.90625 L 12.46875 13.875 C 8.894531 17.464844 4.347656 22.027344 4.1875 22.1875 C 2.621094 23.753906 2.617188 26.320313 4.21875 27.8125 C 5.78125 29.355469 8.328125 29.394531 9.8125 27.8125 C 9.824219 27.800781 9.832031 27.792969 9.84375 27.78125 L 16 21.59375 L 22.1875 27.8125 L 22.28125 27.875 C 23.851563 29.355469 26.347656 29.375 27.8125 27.8125 L 27.8125 27.78125 L 27.84375 27.78125 C 29.375 26.214844 29.390625 23.667969 27.8125 22.1875 L 27.78125 22.15625 L 22.5625 16.96875 C 26.074219 16.640625 28.824219 13.675781 28.875 10.09375 L 28.90625 10.09375 C 28.910156 10.074219 28.90625 10.050781 28.90625 10.03125 C 28.90625 10.019531 28.90625 10.011719 28.90625 10 C 29.003906 8.84375 28.753906 7.738281 28.15625 6.78125 L 27.46875 5.71875 L 22.8125 10.375 L 21.40625 8.90625 L 26.15625 4.15625 L 24.78125 3.59375 C 23.976563 3.25 23.046875 3 22 3 C 18.15625 3 15 6.15625 15 10 C 15 10.417969 15.089844 10.78125 15.15625 11.15625 C 14.71875 11.59375 14.390625 11.953125 13.875 12.46875 L 9.90625 8.5 L 9.90625 5.53125 L 9.40625 5.25 L 5.90625 3.15625 Z M 22 5 C 22.140625 5 22.238281 5.082031 22.375 5.09375 L 18.59375 8.875 L 19.28125 9.59375 L 22.09375 12.5 L 22.78125 13.21875 L 26.75 9.25 C 26.769531 9.480469 26.933594 9.648438 26.90625 9.90625 L 26.90625 10 C 26.90625 12.753906 24.660156 15 21.90625 15 C 21.539063 15 21.09375 14.914063 20.59375 14.8125 L 20.0625 14.71875 L 19.6875 15.09375 L 8.40625 26.40625 L 8.375 26.40625 L 8.375 26.4375 C 7.664063 27.214844 6.421875 27.234375 5.59375 26.40625 L 5.59375 26.375 L 5.5625 26.375 C 4.785156 25.664063 4.765625 24.421875 5.59375 23.59375 C 5.972656 23.214844 13.3125 15.8125 16.90625 12.21875 L 17.3125 11.8125 L 17.15625 11.25 C 17.074219 10.925781 17 10.367188 17 10 C 17 7.246094 19.246094 5 22 5 Z M 5.5625 5.25 L 7.90625 6.6875 L 7.90625 7.6875 L 7.6875 7.90625 L 6.6875 7.90625 L 5.25 5.5625 Z M 20.1875 17.40625 L 26.40625 23.59375 L 26.40625 23.625 L 26.4375 23.625 C 27.214844 24.335938 27.234375 25.578125 26.40625 26.40625 L 26.375 26.40625 L 26.375 26.4375 C 25.664063 27.214844 24.421875 27.234375 23.59375 26.40625 L 17.40625 20.1875 Z" />
+            </svg>
+            <h10 class="font-Rubik font-bold text-2xl py-2 text-gray-100">Dev Tools</h10>
+            <ul class="py-3 font-Inter text-gray-300 space-y-1">
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>Figma</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>Github</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>VS Code</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>Visual Studio</li>
+              <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-400"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>Terminal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col items-center justify-center mt-32 border-b-4 border-teal-500">
+      <div class="lg:py-10 flex flex-col items-center">
+        <!-- <svg style="z-index: -10;" class="text-teal-500 opacity-50 fill-current h-64 absolute left-0">
+            <circle cx="40" cy="150" r="100" />
+          </svg> -->
+        <h3 class="font-Rubik text-4xl pb-10 dark:text-gray-200">Featured Projects</h3>
+
+      </div>
+      <div class="grid xl:grid-cols-2 gap-x-40 gap-y-28 lg:max-w-6xl">
+        <div>
+          <h4 class="font-Rubik font-semibold text-xl dark:text-gray-200">DashtoTab</h4>
+          <div class="flex flex-col rounded-lg bg-gray-100 dark:bg-gray-800 h-40 p-2">
+            <p class="font-Inter text-lg text-gray-600 py-6 dark:text-gray-400">A full stack application for organizing
+              ideas and notes on visual boards. Features components such as notes, todo lists, and links. Built with
+              Next.js, Tailwind CSS, and ASP.NET Core.</p>
+          </div>
+          <div class="flex flex-wrap items-center mt-4">
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border dark:border-none border-teal-50 bg-teal-500 bg-opacity-20 dark:bg-teal-700 rounded-lg p-1">Next.js</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border dark:border-none border-teal-50 bg-teal-500 bg-opacity-20 dark:bg-teal-700 rounded-lg p-1">Tailwind
+              CSS</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border dark:border-none border-teal-50 bg-teal-500 bg-opacity-20 dark:bg-teal-700 rounded-lg p-1">Unsplash
+              API</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border dark:border-none border-teal-50 bg-teal-500 bg-opacity-20 dark:bg-teal-700 rounded-lg p-1">OpenWeatherMap
+              API</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button
+              class="flex items-center mt-4 font-Rubik font-medium text-lg text-gray-600 h-12 w-28 bg-gray-100 shadow-md border-gray-200 border p-2 rounded-lg duration-300 ease-in-out hover:text-teal-500">
+              <svg class="h-6 w-6 fill-current mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg>Github</button>
+            <button
+              class="flex items-center mt-4 font-Rubik text-lg h-12 bg-teal-500 hover:bg-teal-700 text-teal-100 dark:text-black border border-teal-400 p-2 rounded-lg shadow-md">
+              <svg class="h-6 w-6 fill-current mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path
+                  d="M 18 5 L 18 7 L 23.5625 7 L 11.28125 19.28125 L 12.71875 20.71875 L 25 8.4375 L 25 14 L 27 14 L 27 5 Z M 5 9 L 5 27 L 23 27 L 23 14 L 21 16 L 21 25 L 7 25 L 7 11 L 16 11 L 18 9 Z" />
+              </svg>View Site</button>
+          </div>
+        </div>
+        <div class="relative rounded-lg">
+
+          <img src="../mydash.jpg" alt="dash" class=" rounded-lg h-full w-full">
+          <div class="absolute bg-coolGray-400 w-full h-full top-0 hover:opacity-0 duration-300 ease-in-out rounded-lg">
+
+            <div class="flex items-center justify-center h-full w-full space-x-4 text-gray-50 text-3xl font-Rubik">
+              <span class="font-orbitron text-6xl mr-10">M</span>Motion
+            </div>
+
+          </div>
+        </div>
+        <div class="relative">
+
+          <img src="../mydash.jpg" alt="dash" class="rounded-lg h-full w-full">
+          <div
+            class="absolute bg-coolGray-800 bg-opacity-50 w-full h-full top-0 hover:opacity-0 duration-300 ease-in-out rounded-lg">
+
+            <div class="flex items-center justify-center h-full w-full space-x-4 text-gray-50 text-3xl font-Rubik">
+              <span class="font-orbitron text-6xl mr-10">M</span>Motion
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-Rubik font-semibold text-xl dark:text-gray-200 pb-4">CayaNote</h4>
+          <div class="flex flex-col rounded-lg bg-gray-100 dark:bg-gray-800 h-40">
+            <p class="font-Inter text-lg text-gray-600 dark:text-gray-400">A full stack application for organizing ideas
+              and notes on visual boards. Features components such as notes, todo lists, and links. Built with Next.js,
+              Tailwind CSS, and ASP.NET Core.</p>
+          </div>
+          <div class="flex items-center flex-wrap">
+            <span
+              class="font-Rubik text-teal-800 dark:text-black bg-teal-500 dark:bg-teal-700 bg-opacity-20 rounded-lg p-1">Next.js</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black bg-teal-500 dark:bg-teal-700 bg-opacity-20 rounded-lg p-1">Tailwind
+              CSS</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black bg-teal-500 dark:bg-teal-700 bg-opacity-20 rounded-lg p-1">ASP.NET
+              Core</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black bg-teal-500 dark:bg-teal-700 bg-opacity-20 rounded-lg p-1">Unsplash
+              API</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black bg-teal-500 dark:bg-teal-700 bg-opacity-20 rounded-lg p-1">PostgreSQL</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button
+              class="flex items-center mt-4 font-Inter font-semibold text-lg text-gray-600 h-12 w-28 bg-gray-100 border border-gray-200 p-2 rounded-lg shadow-xl hover:shadow-none hover:border-2 duration-300 ease-in-out hover:text-teal-500">
+              <svg class="h-6 w-6 fill-current mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg>Github</button>
+            <button
+              class="flex items-center mt-4 font-Inter font-semibold text-lg h-12 bg-teal-500 text-teal-100 dark:text-black border border-teal-400 p-2 rounded-lg shadow-lg">
+              <svg class="h-6 w-6 fill-current mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path
+                  d="M 18 5 L 18 7 L 23.5625 7 L 11.28125 19.28125 L 12.71875 20.71875 L 25 8.4375 L 25 14 L 27 14 L 27 5 Z M 5 9 L 5 27 L 23 27 L 23 14 L 21 16 L 21 25 L 7 25 L 7 11 L 16 11 L 18 9 Z" />
+              </svg>View Site</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-4xl font-Rubik mt-32 dark:text-gray-200">More Projects</h2>
+      <div class="grid lg:grid-cols-3 gap-1 mt-20 lg:max-w-7xl pb-24">
+        <div
+          class="w-96 h-64 px-6 dark:border-none rounded-lg bg-gray-100 border-2 shadow-sm dark:bg-gray-700 font-Inter space-y-4">
+          <div class="flex items-center justify-between mt-3">
+
+            <div class="rounded-lg w-10 h-10 bg-teal-500 bg-opacity-20 flex items-center justify-center">
+
+              <svg class="h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <a class="flex items-center justify-center" href><svg
+                class="h-8 w-8 fill-current text-gray-600 dark:text-gray-200 mr-1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg></a>
+          </div>
+          <h1 class="text-xl dark:text-gray-200 font-semibold">Tripplanet</h1>
+          <p class="dark:text-gray-300">A travel planning application built with ASP.NET Core and the Bing Maps API.</p>
+          <div class="text-sm">
+
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">ASP.NET
+              Core</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">Bing
+              Maps API</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">Tailwind
+              CSS</span>
+          </div>
+
+        </div>
+        <div
+          class="w-96 h-64 px-6 dark:border-gray-600 rounded-lg bg-gray-100 border-2 shadow-sm dark:bg-gray-700 font-Inter space-y-4">
+          <div class="flex items-center justify-between mt-3">
+
+            <div class="rounded-lg w-10 h-10 bg-teal-500 bg-opacity-20 flex items-center justify-center">
+
+              <svg class="h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <a class="flex items-center justify-center" href><svg
+                class="h-8 w-8 fill-current text-gray-600 dark:text-gray-200 mr-1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg></a>
+          </div>
+          <h1 class="text-xl dark:text-gray-200 font-semibold">Portfolio</h1>
+          <p class="dark:text-gray-300">My portfolio website built with TailwindCSS, JavaScript, and GSAP.</p>
+          <div>
+
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">JavaScript</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">Tailwind
+              CSS</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">GSAP</span>
+          </div>
+
+        </div>
+        <div
+          class="w-96 h-64 px-6 dark:border-gray-600 rounded-lg bg-gray-100 border-2 shadow-sm dark:bg-gray-700 font-Inter space-y-4">
+          <div class="flex items-center justify-between mt-3">
+
+            <div class="rounded-lg w-10 h-10 bg-teal-500 bg-opacity-20 flex items-center justify-center">
+
+              <svg class="h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <a class="flex items-center justify-center" href><svg
+                class="h-8 w-8 fill-current text-gray-600 dark:text-gray-200 mr-1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg></a>
+          </div>
+          <h1 class="text-xl dark:text-gray-200 font-semibold">Growth</h1>
+          <p class="dark:text-gray-300">A gratitude journal application built with React, React Native, and ASP.NET Core.</p>
+          <div>
+
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">React Native</span>
+              <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">React</span> 
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">ASP.NET
+              Core</span>
+
+          </div>
+
+        </div>
+        <div
+          class="w-96 h-64 px-6 dark:border-gray-600 rounded-lg bg-gray-100 border-2 shadow-sm dark:bg-gray-700 font-Inter space-y-4">
+          <div class="flex items-center justify-between mt-3">
+
+            <div class="rounded-lg w-10 h-10 bg-teal-500 bg-opacity-20 flex items-center justify-center">
+
+              <svg class="h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <a class="flex items-center justify-center" href><svg
+                class="h-8 w-8 fill-current text-gray-600 dark:text-gray-200 mr-1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg></a>
+          </div>
+          <h1 class="text-xl dark:text-gray-200 font-semibold">Scrapbook</h1>
+          <p class="dark:text-gray-300">This portfolio which was build with TailwindCSS, JavaScript, and GSAP.</p>
+          <div>
+
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">JavaScript</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">Tailwind
+              CSS</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">GSAP</span>
+          </div>
+
+        </div>
+        <div
+          class="w-96 h-64 px-6 dark:border-gray-600 rounded-lg bg-gray-100 border-2 shadow-sm dark:bg-gray-700 font-Inter space-y-4">
+          <div class="flex items-center justify-between mt-3">
+
+            <div class="rounded-lg w-10 h-10 bg-teal-500 bg-opacity-20 flex items-center justify-center">
+
+              <svg class="h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <a class="flex items-center justify-center" href><svg
+                class="h-8 w-8 fill-current text-gray-600 dark:text-gray-200 mr-1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg></a>
+          </div>
+          <h1 class="text-xl dark:text-gray-200 font-semibold">Chess</h1>
+          <p class="dark:text-gray-300">This portfolio which was built with TailwindCSS, JavaScript, and GSAP.</p>
+          <div>
+
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">JavaScript</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">Tailwind
+              CSS</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">GSAP</span>
+          </div>
+
+        </div>
+        <div
+          class="w-96 h-64 px-6 dark:border-gray-600 rounded-lg bg-gray-100 border-2 shadow-sm dark:bg-gray-700 font-Inter space-y-4">
+          <div class="flex items-center justify-between mt-3">
+
+            <div class="rounded-lg w-10 h-10 bg-teal-500 bg-opacity-20 flex items-center justify-center">
+
+              <svg class="h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <a class="flex items-center justify-center" href><svg
+                class="h-8 w-8 fill-current text-gray-600 dark:text-gray-200 mr-1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                  d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+              </svg></a>
+          </div>
+          <h1 class="text-xl dark:text-gray-200 font-semibold">Csharpbot</h1>
+          <p class="dark:text-gray-300">A bot built for the Telegram platform with C#.</p>
+          <div>
+
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">C#</span>
+            <span
+              class="font-Rubik text-teal-800 dark:text-black border border-teal-50 dark:border-teal-700 bg-teal-500 bg-opacity-20 rounded-lg p-1">Telegram
+              Bot API</span>
+          </div>
+
+        </div>
+    </section>
+    <section id="contactsection">
+      <div class="flex flex-col items-center justify-center mt-40 py-10 lg:py-20  text-center">
+        <h11 class="font-Rubik lg:text-4xl text-3xl dark:text-gray-200">
+          Contact Me</h11>
+        <p class="font-Inter py-10 text-lg dark:text-gray-400 text-gray-600 lg:max-w-3xl">I'm always open to discussing new
+          opportunities
+          so
+          get in touch by filling out the contact form or sending me an email at <span class="text-teal-500">cwkamer@gmail.com</span></p>
+    
+        <form class="flex flex-col text-left items-center space-y-4 font-Inter font-semibold px-4 lg:px-0" name="contact" method="POST"
+          id="contactform" data-netlify="true">
+          <div>
+            <label class="block pb-2 dark:text-gray-300 text-gray-600" for="name">Name</label>
+            <input
+              class="block p-2 border-2 rounded-lg lg:w-96 md:w-96 w-80 bg-gray-100 dark:bg-gray-500 outline-none border-gray-300 focus:border-teal-400 dark:text-gray-200 dark:focus:border-teal-400"
+              type="text" name="name" id="name" required>
+          </div>
+          <div>
+            <label class="block pb-2 dark:text-gray-300 text-gray-600" for="email">Email</label>
+            <input
+              class="block p-2 border-2 rounded-lg lg:w-96 md:w-96 w-80 bg-gray-100 dark:bg-gray-500 outline-none border-gray-300  focus:border-teal-400 dark:text-gray-200 dark:focus:border-teal-400"
+              type="email" name="email" required>
+          </div>
+          <div>
+    
+            <label class="block pb-2 dark:text-gray-300 text-gray-600" for="message">Message</label>
+            <textarea
+              class="block p-2 border-2 rounded-lg lg:w-96 md:w-96 w-80 h-56 bg-gray-100 dark:bg-gray-500 outline-none border-gray-300  focus:border-teal-400 dark:text-gray-200 dark:focus:border-teal-400"
+              name="message"></textarea>
+          </div>
+          <button type="submit"
+            class="rounded font-Inter flex items-center justify-center text-teal-100 h-11 px-6 mb-6 w-24 bg-teal-500 hover:bg-teal-700 focus:outline-none ease-in-out duration-300">Submit 
+          </button>
+        </form>
+      </div>
+    </section>
+    <footer class="flex flex-col items-center pt-5 w-screen font-Inter bg-gray-700 text-gray-400 text-sm">
+        <div class="flex items-center justify-between w-screen lg:max-w-6xl">
+    
+          <div id="logo" class="relative py-3">
+            <div class="absolute -inset-0.25 bg-teal-500 rounded-lg blur-lg opacity-40 bg-gradient-to-r from-teal-500 to-teal-300"></div>
+            <a href=""
+              class="relative font-orbitron font-black border-gray-500 text-teal-500 text-4xl bg-gray-600 border-2 shadow-lg rounded-xl px-3 duration-300 ease-in-out">C</a>
+          </div>
+      
+      
+          <ul class="flex items-center justify-center space-x-4">
+            <li
+            class="duration-500 ease-in-out text-gray-200 hover:text-teal-400 hover:bg-gray-200 cursor-pointer border rounded-full border-gray-400 p-2">
+              <a href="https://github.com/ckam03" target="_blank">
+                <svg class="cursor-pointer h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z"/></svg>
+              </a>
+            </li>
+            <li
+              class="duration-500 ease-in-out text-gray-200 hover:text-teal-400 hover:bg-gray-200 cursor-pointer border rounded-full border-gray-400 p-2">
+              <a href="https://www.linkedin.com/in/chriskamer/" target="_blank">
+                <svg class="cursor-pointer h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"/></svg>
+              </a>
+            </li>
+            <li
+            class="duration-500 ease-in-out text-gray-200 hover:text-teal-400 hover:bg-gray-200 cursor-pointer border rounded-full border-gray-400 p-2">
+              <a href="mailto:cwkamer@gmail.com" target="_blank">
+                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 3 8 L 3 26 L 29 26 L 29 8 Z M 7.3125 10 L 24.6875 10 L 16 15.78125 Z M 5 10.875 L 15.4375 17.84375 L 16 18.1875 L 16.5625 17.84375 L 27 10.875 L 27 24 L 5 24 Z"/></svg>
+              </a>
+            </li>
+            <li
+            class="duration-500 ease-in-out text-gray-200 hover:text-teal-400 hover:bg-gray-200 cursor-pointer border rounded-full border-gray-400 p-2">
+              <a href="https://codepen.io/ckam03" target="_blank">
+                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 16 2.84375 L 15.4375 3.21875 L 3.4375 11.25 L 3 11.53125 L 3 20.46875 L 3.4375 20.75 L 15.4375 28.78125 L 16 29.15625 L 16.5625 28.78125 L 28.5625 20.75 L 29 20.46875 L 29 11.53125 L 28.5625 11.25 L 16.5625 3.21875 Z M 15 5.90625 L 15 11.34375 L 9.84375 14.8125 L 5.8125 12.09375 Z M 17 5.90625 L 26.1875 12.09375 L 22.15625 14.8125 L 17 11.34375 Z M 16 13.09375 L 20.34375 16 L 16 18.90625 L 11.65625 16 Z M 5 13.9375 L 8.0625 16 L 5 18.0625 Z M 27 13.9375 L 27 18.0625 L 23.9375 16 Z M 9.875 17.1875 L 15 20.65625 L 15 26.09375 L 5.8125 19.90625 Z M 22.125 17.1875 L 26.1875 19.90625 L 17 26.09375 L 17 20.65625 Z"/></svg>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+    
+      <span class="pt-8 pb-4">Chris Kamer &copy; 2021</span>
+    </footer>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+
+<script defer src="Index.js"></script>
+
+</html>
